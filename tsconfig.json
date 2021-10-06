@@ -1,0 +1,44 @@
+{
+    "awesomeTypescriptLoaderOptions": {
+        "useCache": true
+    },
+    "compilerOptions": {
+
+        "allowJs": true,
+        "baseUrl": ".",
+        "checkJs": true,
+        "declaration": true,
+        "declarationDir": "./dist/types",
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es2015",
+            "es2015.promise"
+        ],
+        "sourceMap": false,
+        "inlineSourceMap": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "strictNullChecks": false,
+        "removeComments": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "index.ts",
+        "test",
+        "src"
+    ],
+    "exclude": [
+        "coverage",
+        "node_modules",
+        "dist",
+        ".git"
+    ],
+    "compileOnSave": false
+
+}

@@ -1,0 +1,57 @@
+{
+    "name": "cucumber-training",
+    "version": "1.0.0",
+    "description": "Testing cucumber",
+    "main": "./dist/index.js",
+    "types": "./dist/types/index.d.ts",
+    "scripts": {
+        "bdd": "nyc cucumber-js",
+        "build": "rm -rf ./dist; rm -rf ./types; tsc --outDir dist"
+    },
+    "nyc": {
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "require": [],
+        "reporter": [
+            "text-summary",
+            "clover",
+            "lcov",
+            "html"
+        ],
+        "sourceMap": true,
+        "instrument": true
+    },
+    "repository": {
+        "type": "git",
+        "url": "ssh://git@bitbucket.united-internet.org/ngcscom/node-config-loader.git"
+    },
+    "author": "fbueno@arsys.es",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@cucumber/cucumber": "7.3.1",
+        "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
+        "@types/chai": "4.2.11",
+        "@types/lodash": "4.14.149",
+        "@types/mocha": "7.0.2",
+        "@types/node": "14.11.2",
+        "@types/sinon": "7.5.2",
+        "@typescript-eslint/eslint-plugin": "4.3.0",
+        "@typescript-eslint/parser": "4.3.0",
+        "awesome-typescript-loader": "5.2.1",
+        "badge-generator": "git+ssh://git@bitbucket.united-internet.org/ngcscom/badge-generator.git#1.0.0",
+        "chai": "4.2.0",
+        "cucumber-tsflow": "^4.0.0-rc.1",
+        "eslint": "7.9.0",
+        "mocha": "7.1.1",
+        "nyc": "15.0.0",
+        "sinon": "7.3.1",
+        "source-map-loader": "1.1.0",
+        "ts-node": "9.0.0",
+        "typedoc": "0.18.0",
+        "typedoc-plugin-markdown": "2.4.2",
+        "typescript": "4.0.3"
+    }
+}
