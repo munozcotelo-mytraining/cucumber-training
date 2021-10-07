@@ -1,0 +1,24 @@
+import { setWorldConstructor, World } from "@cucumber/cucumber";
+
+class CustomWorld extends World {
+
+    public constructor( options ) {
+        console.info( options );
+        super(options)
+
+    }
+
+    public method1() : string {
+        return "method1";
+    }
+
+
+    // // Returns a promise that resolves to the element
+    // async waitForElement(locator) {
+    //     const condition = seleniumWebdriver.until.elementLocated(locator)
+    //     return await this.driver.wait(condition)
+    // }
+
+}
+
+setWorldConstructor(CustomWorld);
