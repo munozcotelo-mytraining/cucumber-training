@@ -8,15 +8,21 @@ import { after }   from "cucumber-tsflow";
 
 import { Calculadora } from "./../../../src/calculadora";
 
-console.info( Calculadora );
+import { Workspace } from "./Workspace.class";
 
-@binding()
+@binding( [Workspace ] )
 class SumaTest {
 
     private number1   : number;
     private number2   : number;
     private resultado : number;
     private exception : Error;
+
+    private workspace : Workspace;
+
+    public constructor( workspace : Workspace ) {
+        this.workspace = workspace;
+    }
 
     private getGlobalContext() : any {
         return this[ "_worldObj" ];
@@ -29,7 +35,8 @@ class SumaTest {
 
         const me : SumaTest = this;
 
-        console.info( me.getGlobalContext().method1() );
+        console.info( "Usando al contexto de cucumber", me.getGlobalContext().getSharedVariable() );
+        console.info( "Usando el contexto inyectado", me.workspace.getSharedVariable() );
 
         me.number1 = Number( a );
         me.number2 = Number( b );

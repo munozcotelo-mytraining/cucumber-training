@@ -13,6 +13,8 @@ import { setWorldConstructor, World, IWorldOptions } from "@cucumber/cucumber";
 
 class CustomWorld extends World {
 
+    private sharedVariable : string = "I'm a shared variable in CustomWorld";
+
     public constructor( options : IWorldOptions ) {
         super( options )
     }
@@ -21,6 +23,13 @@ class CustomWorld extends World {
         return "method1";
     }
 
+    public getSharedVariable() : string {
+
+        const me : CustomWorld = this;
+
+        return me.sharedVariable;
+
+    }
 
     public async waitForPromise() : Promise<number>{
 
