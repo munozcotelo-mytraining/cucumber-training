@@ -1,6 +1,7 @@
 Feature: Suma
     Quiero comprobar que la calculadora hace bien las sumas
 
+    @prueba-tag1
     Scenario: "Cuando tengo dos numeros naturales"
         Given Dados dos numeros 1 y 2
         When Cuando los sumo
@@ -26,6 +27,7 @@ Feature: Suma
         When Cuando los sumo
         Then X - La suma es 30
 
+    @prueba-tag2
     Scenario Outline: "Cuando tengo dos numeros naturales BIS BIS"
         Given X - Dados dos numeros <numero_1> y <numero_2>
         When Cuando los sumo

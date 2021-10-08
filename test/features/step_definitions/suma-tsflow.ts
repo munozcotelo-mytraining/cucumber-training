@@ -28,6 +28,16 @@ class SumaTest {
         return this[ "_worldObj" ];
     }
 
+    @before()
+    public myBefore() : void {
+        console.info( "---> un hook before de ts-flow" );
+    }
+
+    @before( "prueba-tag1")
+    public myBeforeWithTag() : void {
+        console.info( "---> un hook before de ts-flow por el uso del tag @prueba-tag1" );
+    }
+
     /* Cualquiera de las dos vale */
     @given( "TsFlow Dados dos numeros {int} y {int}" )
     // @given( /TsFlow Dados dos numeros (.*) y (.*)/ )
@@ -47,6 +57,28 @@ class SumaTest {
     // @when( /^TsFlow Cuando los sumo$/ )
     @when( "TsFlow Cuando los sumo" )
     public doSuma() : void {
+
+        const me : SumaTest = this;
+
+        try {
+
+            me.resultado = Calculadora.suma( me.number1, me.number2 );
+            me.exception = null;
+
+        } catch ( error ) {
+            me.exception = error;
+        }
+
+    }
+
+    /* Cualquiera de las dos vale */
+    // @when( /^TsFlow Cuando los sumo$/, "prueba-tag1" )
+    @when( "TsFlow Cuando los sumo", "prueba-tag1" )
+    public doSumaWithTag1() : void {
+
+        console.info( "************************************************************************" );
+        console.info( "\t****** Estoy sobrecargando este step/when por el uso de @prueba-tag1 ******" );
+        console.info( "************************************************************************" );
 
         const me : SumaTest = this;
 
