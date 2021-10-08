@@ -18,12 +18,18 @@ class SumaTest {
     private resultado : number;
     private exception : Error;
 
+    private getGlobalContext() : any {
+        return this[ "_worldObj" ];
+    }
+
     /* Cualquiera de las dos vale */
     @given( "TsFlow Dados dos numeros {int} y {int}" )
     // @given( /TsFlow Dados dos numeros (.*) y (.*)/ )
     public settingNumbers(  a : number, b : number ) : void {
 
         const me : SumaTest = this;
+
+        console.info( me.getGlobalContext().method1() );
 
         me.number1 = Number( a );
         me.number2 = Number( b );
