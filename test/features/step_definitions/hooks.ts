@@ -13,6 +13,7 @@ Before( function() {
 } );
 
 After( function() {
+    this.log( "@@@@@@@@@@@@@@@@" );
     console.info( "\tEsto se ejecuta despues del ultimo step de cada scenario" );
 } );
 
