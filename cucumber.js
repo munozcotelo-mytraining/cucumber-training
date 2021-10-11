@@ -25,7 +25,8 @@ let common = [
      */
 
     // lanza los test con tag1 (ademas implica la ejecucion de ciertos hooks)
-    "--tags \"@prueba-tag1\"",
+    // "--tags \"@prueba-tag1\"",
+    // "--tags \"@test-new-expression\"",
 
     // lanza los test con tag1 y no tienen tag2
     // "--tags \"@prueba-tag1 and not @prueba-tag2\"",
