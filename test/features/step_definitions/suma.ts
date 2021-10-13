@@ -61,8 +61,8 @@ Given( "X - Dados dos numeros {int} y {int}", function ( a : number, b : number 
 
 } );
 
-Then( "X - La suma es {int}", function ( resultadoEsperado : number ) {
-    assert.equal( this.resultado, resultadoEsperado );
-} );
+// Then( "X - La suma es {int}", function ( resultadoEsperado : number ) {
+//     assert.equal( this.resultado, resultadoEsperado );
+// } );
 
 /* ------------------- */
