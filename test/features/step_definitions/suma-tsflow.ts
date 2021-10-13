@@ -22,6 +22,27 @@ class SumaTest {
         return this[ "_worldObj" ];
     }
 
+    @given( "TsFlow Dados dos numeros -1 y -2 con Ts" )
+    public settingNumbersHardcoded() : void {
+
+        const me : SumaTest = this;
+
+        console.info( me.getGlobalContext().method1() );
+
+        me.number1 = Number( -1 );
+        me.number2 = Number( -2 );
+
+    };
+
+    @then( "TsFlow Obtengo una excepcion" )
+    public checkException() : void {
+
+        const me : SumaTest = this;
+
+        assert.isDefined( me.exception);
+
+    }
+
     /* Cualquiera de las dos vale */
     @given( "TsFlow Dados dos numeros {int} y {int}" )
     // @given( /TsFlow Dados dos numeros (.*) y (.*)/ )
@@ -46,11 +67,13 @@ class SumaTest {
         try {
 
             me.resultado = Calculadora.suma( me.number1, me.number2 );
-            me.exception = null;
+            // me.exception = null;
 
         } catch ( error ) {
             me.exception = error;
         }
+
+        console.info( me.exception );
 
     }
 
