@@ -16,8 +16,8 @@ After( function() {
     console.info( "\tEsto se ejecuta despues del ultimo step de cada scenario" );
 } );
 
-BeforeStep( function() {
-    console.info( "\t\tEsto se ejecuta antes de cada step" );
+BeforeStep( function( scenario: any ) {
+    console.info( "\t\tEsto se ejecuta antes de cada step", scenario );
 } );
 
 AfterStep( function() {
