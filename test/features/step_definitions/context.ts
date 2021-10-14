@@ -13,6 +13,9 @@ import { setWorldConstructor, World, IWorldOptions } from "@cucumber/cucumber";
 
 class CustomWorld extends World {
 
+    public number1 : number;
+    public resultado : number;
+
     public constructor( options : IWorldOptions ) {
         super( options )
     }
@@ -21,6 +24,21 @@ class CustomWorld extends World {
         return "method1";
     }
 
+    public setNumber1( value : number ) : void {
+        this.number1 = value;
+    }
+
+    public getNumber1() : number {
+        return this.number1;
+    }
+
+    public setResultado( value : number ) : void {
+        this.resultado = value;
+    }
+
+    public getResultado() : number {
+        return this.resultado;
+    }
 
     public async waitForPromise() : Promise<number>{
 

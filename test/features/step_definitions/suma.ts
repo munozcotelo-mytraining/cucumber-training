@@ -32,6 +32,7 @@ Given( "Dados dos numeros 1 y -2", function () {
 Given( "Dados dos numeros -1 y -2", async function () {
 
     /* We can use methods defined in the context */
+    console.info( "El valor de number1 en el contexto es: ", this.getNumber1() );
     console.info( this.method1() );
     console.info( await this.waitForPromise() );
 
