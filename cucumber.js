@@ -15,7 +15,7 @@ let common = [
      * ==> podemos ejecutar un subconjunto de escenarios
      *
      * Se pueden incluir en hooks before, after, beforestep y afterstep
-     * ==> podemos restringir los hooks a un subconjunto de escenarios
+     * ==> podemos restringir los hooks a un subconjunto de escenarios. No es necesario que el test se ejecute para un tag en concreto
      *
      * cucumber-tsflow permite tambien el uso de tags en hooks
      * pero ademas permite usarlos en los steps given, then...
@@ -25,7 +25,8 @@ let common = [
      */
 
     // lanza los test con tag1 (ademas implica la ejecucion de ciertos hooks)
-    "--tags \"@prueba-tag1\"",
+    // "--tags \"@prueba-tag1\"",
+    // "--tags \"@prueba-tag1\"",
 
     // lanza los test con tag1 y no tienen tag2
     // "--tags \"@prueba-tag1 and not @prueba-tag2\"",
